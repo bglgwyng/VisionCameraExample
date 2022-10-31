@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "react": "18.1.0",
-    "react-native": "0.70.4"
+    "react-native": "0.70.4",
+    "react-native-reanimated": "^2.12.0",
+    "react-native-vision-camera": "^2.15.1",
+    "vision-camera-code-scanner": "^0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
