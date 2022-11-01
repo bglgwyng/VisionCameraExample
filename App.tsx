@@ -26,18 +26,18 @@ const CameraApp = () => {
   const {width, height} = useWindowDimensions();
 
   // FIXME: uncomment
-  // const frameProcessor = useFrameProcessor(frame => {
-  //   'worklet';
-  //   console.info(scanBarcodes(frame, [BarcodeFormat.QR_CODE]));
-  // }, []);
+  const frameProcessor = useFrameProcessor(frame => {
+    'worklet';
+    console.info(scanBarcodes(frame, [BarcodeFormat.QR_CODE]));
+  }, []);
 
   return device ? (
     <Camera
       device={device}
       style={{width, height}}
       // FIXME: uncomment
-      // frameProcessor={frameProcessor}
-      // frameProcessorFps={5}
+      frameProcessor={frameProcessor}
+      frameProcessorFps={5}
       isActive
     />
   ) : null;
