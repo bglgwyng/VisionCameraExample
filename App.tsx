@@ -25,22 +25,19 @@ const CameraApp = () => {
   const device = devices.front;
   const {width, height} = useWindowDimensions();
 
-  const frameProcessor = useFrameProcessor(frame => {
-    'worklet';
-
-    // If you comment out the following line, the app won't crash
-    // xyz(frame);
-
-    // `scanBarcodes` works fine
-    console.info(scanBarcodes(frame, [BarcodeFormat.QR_CODE]));
-  }, []);
+  // FIXME: uncomment
+  // const frameProcessor = useFrameProcessor(frame => {
+  //   'worklet';
+  //   console.info(scanBarcodes(frame, [BarcodeFormat.QR_CODE]));
+  // }, []);
 
   return device ? (
     <Camera
       device={device}
       style={{width, height}}
-      frameProcessor={frameProcessor}
-      frameProcessorFps={5}
+      // FIXME: uncomment
+      // frameProcessor={frameProcessor}
+      // frameProcessorFps={5}
       isActive
     />
   ) : null;
